@@ -1,0 +1,28 @@
+#  백준 / 스택 수열
+
+n = int(input())
+array = []
+stack = [1]
+
+for i in range(0, n):
+    array.append(int(input()))
+
+k = 2
+
+print("+")
+while stack:
+    target = array[0]
+    stack_number = stack[-1]
+    
+    if stack_number < target:
+        stack.append(k)
+        k += 1
+        print("+")
+        
+    elif stack_number == target:
+        stack.pop()
+        array.pop(0)
+        print("-")
+    else:
+        print("NO")
+        break
